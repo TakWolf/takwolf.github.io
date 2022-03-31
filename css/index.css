@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Ark-Pixel-10;
+  src: url("../font/ark-pixel-10px-zh_cn.woff2");
+}
+@font-face {
+  font-family: Fusion-Pixel;
+  src: url("../font/fusion-pixel.woff2");
+}
+.page {
+  padding: 64px 192px;
+}
+.page .logo {
+  display: block;
+}
+.page .title {
+  margin-top: 32px;
+  color: black;
+  font-family: Fusion-Pixel, monospace;
+  font-size: 48px;
+  line-height: 80px;
+}
+.page .bio {
+  margin-bottom: 60px;
+  font-family: Fusion-Pixel, monospace;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 24px;
+}
+.page .link-group a {
+  margin-right: 20px;
+  font-family: Fusion-Pixel, monospace;
+  font-size: 24px;
+}
+.page .copyright {
+  margin-top: 200px;
+  color: rgba(0, 0, 0, 0.54);
+  font-family: Ark-Pixel-10, monospace;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    padding: 64px 64px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .page {
+    padding: 64px 16px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
