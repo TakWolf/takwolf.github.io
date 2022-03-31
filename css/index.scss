@@ -4,18 +4,12 @@
 }
 
 @font-face {
-    font-family: Ark-Pixel-10;
-    src: url("../font/ark-pixel-10px-zh_cn.woff2");
-}
-
-@font-face {
     font-family: Fusion-Pixel;
     src: url("../font/fusion-pixel.woff2");
 }
 
 $color_text_primary: rgb(0, 0, 0);
 $color_text_secondary: rgba(0, 0, 0, 0.54);
-$font_ark_pixel_10: Ark-Pixel-10, monospace;
 $font_fusion_pixel: Fusion-Pixel, monospace;
 
 .page {
@@ -49,10 +43,10 @@ $font_fusion_pixel: Fusion-Pixel, monospace;
     }
 
     .copyright {
-        margin-top: 200px;
+        margin-top: 180px;
         color: $color_text_secondary;
-        font-family: $font_ark_pixel_10;
-        font-size: 20px;
+        font-family: $font_fusion_pixel;
+        font-size: 18px;
     }
 }
 
