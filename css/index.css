@@ -7,45 +7,64 @@
   font-family: Fusion-Pixel;
   src: url("../font/fusion-pixel.woff2");
 }
+body {
+  display: flex;
+  flex-direction: column;
+  cursor: url("../img/cursor-default.png"), default;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+a {
+  cursor: url("../img/cursor-pointer.png") 6 0, pointer;
+}
+
 .page {
-  padding: 64px 192px;
+  padding: 64px 32px;
 }
 .page .logo {
+  width: 144px;
+  height: 80px;
   display: block;
 }
 .page .title {
-  margin-top: 32px;
+  margin-top: 24px;
   color: black;
   font-family: Fusion-Pixel, monospace;
   font-size: 48px;
   line-height: 80px;
 }
 .page .bio {
-  margin-bottom: 60px;
   font-family: Fusion-Pixel, monospace;
   color: rgba(0, 0, 0, 0.54);
   font-size: 24px;
+}
+.page .link-group {
+  margin-top: 60px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .page .link-group a {
   margin-right: 20px;
   font-family: Fusion-Pixel, monospace;
   font-size: 24px;
+  line-height: 40px;
+  text-underline-offset: 4px;
 }
 .page .copyright {
-  margin-top: 180px;
   color: rgba(0, 0, 0, 0.54);
   font-family: Fusion-Pixel, monospace;
   font-size: 18px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .page {
-    padding: 64px 64px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .page {
-    padding: 64px 16px;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

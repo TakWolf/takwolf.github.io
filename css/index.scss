@@ -12,15 +12,31 @@ $color_text_primary: rgb(0, 0, 0);
 $color_text_secondary: rgba(0, 0, 0, 0.54);
 $font_fusion_pixel: Fusion-Pixel, monospace;
 
+body {
+    display: flex;
+    flex-direction: column;
+    cursor: url("../img/cursor-default.png"), default;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+a {
+    cursor: url("../img/cursor-pointer.png") 6 0, pointer;
+}
+
 .page {
-    padding: 64px 192px;
+    padding: 64px 32px;
 
     .logo {
+        width: 144px;
+        height: 80px;
         display: block;
     }
 
     .title {
-        margin-top: 32px;
+        margin-top: 24px;
         color: $color_text_primary;
         font-family: $font_fusion_pixel;
         font-size: 48px;
@@ -28,36 +44,37 @@ $font_fusion_pixel: Fusion-Pixel, monospace;
     }
 
     .bio {
-        margin-bottom: 60px;
         font-family: $font_fusion_pixel;
         color: $color_text_secondary;
         font-size: 24px;
     }
 
     .link-group {
+        margin-top: 60px;
+        margin-bottom: 180px;
+        display: flex;
+        flex-wrap: wrap;
+
         a {
             margin-right: 20px;
             font-family: $font_fusion_pixel;
             font-size: 24px;
+            line-height: 40px;
+            text-underline-offset: 4px;
         }
     }
 
     .copyright {
-        margin-top: 180px;
         color: $color_text_secondary;
         font-family: $font_fusion_pixel;
         font-size: 18px;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     .page {
-        padding: 64px 64px;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .page {
-        padding: 64px 16px;
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
