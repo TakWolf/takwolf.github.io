@@ -8,50 +8,88 @@
         return(min + Math.round(rand * range));
     }
 
-    var sprites = [
-        'img/role-mario.gif',
-        'img/role-link.gif',
-        'img/role-kirby.gif',
-    ];
+    var configs = [{
+        src: 'img/role-mario.gif',
+        width: 16,
+        height: 16,
+    }, {
+        src: 'img/role-link.gif',
+        width: 16,
+        height: 16,
+    }, {
+        src: 'img/role-metroid.gif',
+        width: 20,
+        height: 32,
+    }, {
+        src: 'img/role-kirby.gif',
+        width: 16,
+        height: 16,
+    }, {
+        src: 'img/role-ryu-hayabusa.gif',
+        width: 22,
+        height: 31,
+    }, {
+        src: 'img/role-castlevania.gif',
+        width: 16,
+        height: 31,
+    }, {
+        src: 'img/role-mega-man.gif',
+        width: 25,
+        height: 24,
+    }, {
+        src: 'img/role-rush-n-attack.gif',
+        width: 17,
+        height: 32,
+    }, {
+        src: 'img/role-karateka.gif',
+        width: 27,
+        height: 45,
+    }, {
+        src: 'img/role-kung-fu.gif',
+        width: 22,
+        height: 32,
+    }];
 
-    function Role(sprite) {
+    var scale = 4;
+
+    function Role(config) {
         var img = document.createElement('img');
-        img.src = sprite;
-        img.style.width = '64px';
-        img.style.height = '64px';
+        img.src = config.src;
+        img.style.width = config.width * scale + 'px';
+        img.style.height = config.height * scale + 'px';
         img.style.position = 'fixed';
         img.style.bottom = '0';
-        img.style.left = '-64px';
+        img.style.left = -config.width * scale + 'px';
         document.body.appendChild(img);
 
-        var x = -32;
+        var x = -config.width * scale;
         var speed = 0;
         var waiting = true;
 
         this.reset = function () {
-            x = -32;
+            x = -config.width * scale;
             speed = getRandomNum(2, 8);
         };
 
         this.update = function (dt) {
             if (waiting) {
-                if (getRandomNum(0, 60 * 3) === 0) {
+                if (getRandomNum(0, 60 * 5) === 0) {
                     waiting = false;
                 }
             } else {
                 x += speed;
-                if (x > window.innerWidth + 32) {
+                if (x > window.innerWidth + config.width * scale) {
                     waiting = true;
                     this.reset();
                 }
             }
-            img.style.left = (x - 32) + 'px';
+            img.style.left = (x - config.width * scale / 2) + 'px';
         };
     }
 
     var roles = [];
-    for (var i = 0; i < sprites.length; i++) {
-        var role = new Role(sprites[i]);
+    for (var i = 0; i < configs.length; i++) {
+        var role = new Role(configs[i]);
         role.reset();
         roles.push(role);
     }
