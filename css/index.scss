@@ -11,19 +11,18 @@
 $color_text_primary: rgb(0, 0, 0);
 $color_text_secondary: rgba(0, 0, 0, 0.54);
 $font_fusion_pixel: Fusion-Pixel, monospace;
+$cursor_default: url("../img/cursor-default.png"), default;
+$cursor_pointer: url("../img/cursor-pointer.png") 6 0, pointer;
+$cursor_text: url("../img/cursor-text.png") 11 11, text;
 
 body {
     display: flex;
     flex-direction: column;
-    cursor: url("../img/cursor-default.png"), default;
+    cursor: $cursor_default;
 }
 
 img {
     image-rendering: pixelated;
-}
-
-a {
-    cursor: url("../img/cursor-pointer.png") 6 0, pointer;
 }
 
 .page {
@@ -41,12 +40,14 @@ a {
         font-family: $font_fusion_pixel;
         font-size: 48px;
         line-height: 80px;
+        cursor: $cursor_text;
     }
 
     .bio {
         font-family: $font_fusion_pixel;
         color: $color_text_secondary;
         font-size: 24px;
+        cursor: $cursor_text;
     }
 
     .link-group {
@@ -68,6 +69,7 @@ a {
         color: $color_text_secondary;
         font-family: $font_fusion_pixel;
         font-size: 18px;
+        cursor: $cursor_text;
     }
 }
 
@@ -77,4 +79,8 @@ a {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+a:hover {
+    cursor: $cursor_pointer;
 }
