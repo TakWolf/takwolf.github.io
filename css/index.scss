@@ -8,20 +8,20 @@ body {
 }
 
 .theme-light {
-    color: common.$text_primary_on_light;
-    background-color: common.$background_light;
+    color: common.$color_text_primary_on_light;
+    background-color: common.$color_background_light;
 
     .color-text-secondary {
-        color: common.$text_secondary_on_light;
+        color: common.$color_text_secondary_on_light;
     }
 }
 
 .theme-dark {
-    color: common.$text_primary_on_dark;
-    background-color: common.$background_dark;
+    color: common.$color_text_primary_on_dark;
+    background-color: common.$color_background_dark;
 
     .color-text-secondary {
-        color: common.$text_secondary_on_dark;
+        color: common.$color_text_secondary_on_dark;
     }
 
     a:link {

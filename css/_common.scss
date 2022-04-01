@@ -8,13 +8,13 @@
     src: url("../font/fusion-pixel.woff2");
 }
 
-$background_light: white;
-$text_primary_on_light: rgba(0, 0, 0, 0.87);
-$text_secondary_on_light: rgba(0, 0, 0, 0.54);
+$color_background_light: white;
+$color_text_primary_on_light: rgba(0, 0, 0, 0.87);
+$color_text_secondary_on_light: rgba(0, 0, 0, 0.54);
 
-$background_dark: #4b4b4b;
-$text_primary_on_dark: white;
-$text_secondary_on_dark: rgba(255, 255, 255, 0.7);
+$color_background_dark: #4b4b4b;
+$color_text_primary_on_dark: white;
+$color_text_secondary_on_dark: rgba(255, 255, 255, 0.7);
 
 $font_fusion_pixel: Fusion-Pixel, monospace;
 
