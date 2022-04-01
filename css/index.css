@@ -82,6 +82,7 @@ body {
 }
 .page .copyright {
   font-size: 18px;
+  line-height: 24px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 
