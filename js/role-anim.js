@@ -14,8 +14,9 @@
         'img/role-kirby.gif',
     ];
 
-    function Role() {
+    function Role(sprite) {
         var img = document.createElement('img');
+        img.src = sprite;
         img.style.width = '64px';
         img.style.height = '64px';
         img.style.position = 'fixed';
@@ -24,11 +25,12 @@
         document.body.appendChild(img);
 
         var x = -32;
+        var speed = 0;
         var waiting = true;
 
         this.reset = function () {
-            img.src = sprites[getRandomNum(0, sprites.length - 1)];
             x = -32;
+            speed = getRandomNum(2, 8);
         };
 
         this.update = function (dt) {
@@ -37,7 +39,7 @@
                     waiting = false;
                 }
             } else {
-                x += 4;
+                x += speed;
                 if (x > window.innerWidth + 32) {
                     waiting = true;
                     this.reset();
@@ -47,11 +49,17 @@
         };
     }
 
-    var role = new Role();
-    role.reset();
+    var roles = [];
+    for (var i = 0; i < sprites.length; i++) {
+        var role = new Role(sprites[i]);
+        role.reset();
+        roles.push(role);
+    }
 
     function update(dt) {
-        role.update(dt);
+        for (var i = 0; i < roles.length; i++) {
+            roles[i].update(dt);
+        }
     }
 
     var fps = 60;
