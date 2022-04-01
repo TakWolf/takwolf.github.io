@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Fusion-Pixel;
+    src: url("../font/fusion-pixel.woff2");
+}
+
+$background_light: white;
+$text_primary_on_light: rgba(0, 0, 0, 0.87);
+$text_secondary_on_light: rgba(0, 0, 0, 0.54);
+
+$background_dark: #4b4b4b;
+$text_primary_on_dark: white;
+$text_secondary_on_dark: rgba(255, 255, 255, 0.7);
+
+$font_fusion_pixel: Fusion-Pixel, monospace;
+
+$cursor_default: url("../img/cursor-default.png"), default;
+$cursor_pointer: url("../img/cursor-pointer.png") 6 0, pointer;
+$cursor_text: url("../img/cursor-text.png") 11 11, text;
+
+img {
+    image-rendering: pixelated;
+}
+
+a {
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    cursor: $cursor_pointer !important;
+}

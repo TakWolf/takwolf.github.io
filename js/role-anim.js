@@ -1,3 +1,6 @@
+/**
+ * 角色动画
+ */
 (function () {
     function getRandomNum(min, max) {
         var range = max - min;
@@ -21,7 +24,7 @@
         document.body.appendChild(img);
 
         var x = -32;
-        var waitting = true;
+        var waiting = true;
 
         this.reset = function () {
             img.src = sprites[getRandomNum(0, sprites.length - 1)];
@@ -29,14 +32,14 @@
         };
 
         this.update = function (dt) {
-            if (waitting) {
+            if (waiting) {
                 if (getRandomNum(0, 60 * 3) === 0) {
-                    waitting = false;
+                    waiting = false;
                 }
             } else {
                 x += 4;
                 if (x > window.innerWidth + 32) {
-                    waitting = true;
+                    waiting = true;
                     this.reset();
                 }
             }

@@ -1,28 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-@font-face {
-    font-family: Fusion-Pixel;
-    src: url("../font/fusion-pixel.woff2");
-}
-
-$color_text_primary: rgb(0, 0, 0);
-$color_text_secondary: rgba(0, 0, 0, 0.54);
-$font_fusion_pixel: Fusion-Pixel, monospace;
-$cursor_default: url("../img/cursor-default.png"), default;
-$cursor_pointer: url("../img/cursor-pointer.png") 6 0, pointer;
-$cursor_text: url("../img/cursor-text.png") 11 11, text;
+@use "common";
 
 body {
     display: flex;
     flex-direction: column;
-    cursor: $cursor_default;
+    font-family: common.$font_fusion_pixel;
+    cursor: common.$cursor_default;
 }
 
-img {
-    image-rendering: pixelated;
+.theme-light {
+    color: common.$text_primary_on_light;
+    background-color: common.$background_light;
+
+    .color-text-secondary {
+        color: common.$text_secondary_on_light;
+    }
+}
+
+.theme-dark {
+    color: common.$text_primary_on_dark;
+    background-color: common.$background_dark;
+
+    .color-text-secondary {
+        color: common.$text_secondary_on_dark;
+    }
+
+    a:link {
+        color: #ffe27b;
+    }
+    a:visited {
+        color: #c4a740;
+    }
 }
 
 .page {
@@ -36,19 +43,15 @@ img {
 
     .title {
         margin-top: 24px;
-        color: $color_text_primary;
-        font-family: $font_fusion_pixel;
         font-size: 48px;
         line-height: 80px;
-        cursor: $cursor_text;
+        cursor: common.$cursor_text;
     }
 
     .bio {
         margin-bottom: 48px;
-        font-family: $font_fusion_pixel;
-        color: $color_text_secondary;
         font-size: 24px;
-        cursor: $cursor_text;
+        cursor: common.$cursor_text;
     }
 
     .link-group {
@@ -58,10 +61,8 @@ img {
 
         a {
             margin-right: 20px;
-            font-family: $font_fusion_pixel;
             font-size: 24px;
             line-height: 40px;
-            text-underline-offset: 4px;
         }
     }
 
@@ -70,10 +71,8 @@ img {
     }
 
     .copyright {
-        color: $color_text_secondary;
-        font-family: $font_fusion_pixel;
         font-size: 18px;
-        cursor: $cursor_text;
+        cursor: common.$cursor_text;
     }
 }
 
@@ -85,6 +84,9 @@ img {
     }
 }
 
-a:hover {
-    cursor: $cursor_pointer;
+.btn-apply-theme {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    cursor: common.$cursor_pointer;
 }

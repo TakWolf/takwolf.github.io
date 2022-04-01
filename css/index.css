@@ -7,14 +7,45 @@
   font-family: Fusion-Pixel;
   src: url("../font/fusion-pixel.woff2");
 }
+img {
+  image-rendering: pixelated;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  cursor: url("../img/cursor-pointer.png") 6 0, pointer !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
+  font-family: Fusion-Pixel, monospace;
   cursor: url("../img/cursor-default.png"), default;
 }
 
-img {
-  image-rendering: pixelated;
+.theme-light {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+}
+.theme-light .color-text-secondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.theme-dark {
+  color: white;
+  background-color: #4b4b4b;
+}
+.theme-dark .color-text-secondary {
+  color: rgba(255, 255, 255, 0.7);
+}
+.theme-dark a:link {
+  color: #ffe27b;
+}
+.theme-dark a:visited {
+  color: #c4a740;
 }
 
 .page {
@@ -27,16 +58,12 @@ img {
 }
 .page .title {
   margin-top: 24px;
-  color: black;
-  font-family: Fusion-Pixel, monospace;
   font-size: 48px;
   line-height: 80px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 .page .bio {
   margin-bottom: 48px;
-  font-family: Fusion-Pixel, monospace;
-  color: rgba(0, 0, 0, 0.54);
   font-size: 24px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
@@ -47,17 +74,13 @@ img {
 }
 .page .link-group a {
   margin-right: 20px;
-  font-family: Fusion-Pixel, monospace;
   font-size: 24px;
   line-height: 40px;
-  text-underline-offset: 4px;
 }
 .page .content-space {
   height: 160px;
 }
 .page .copyright {
-  color: rgba(0, 0, 0, 0.54);
-  font-family: Fusion-Pixel, monospace;
   font-size: 18px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
@@ -69,7 +92,10 @@ img {
     margin-right: auto;
   }
 }
-a:hover {
+.btn-apply-theme {
+  position: fixed;
+  width: 48px;
+  height: 48px;
   cursor: url("../img/cursor-pointer.png") 6 0, pointer;
 }
 
