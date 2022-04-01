@@ -94,9 +94,8 @@ body {
 }
 .btn-apply-theme {
   position: fixed;
-  width: 48px;
-  height: 48px;
-  cursor: url("../img/cursor-pointer.png") 6 0, pointer;
+  width: 32px;
+  height: 32px;
 }
 
 /*# sourceMappingURL=index.css.map */
