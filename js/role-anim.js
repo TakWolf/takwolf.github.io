@@ -118,7 +118,7 @@
         height: 32,
     }];
 
-    var scale = 3;
+    var scale = 2;
 
     function Role(config) {
         var img = document.createElement('img');
@@ -136,12 +136,12 @@
 
         this.reset = function () {
             x = -config.width * scale;
-            speed = getRandomNum(2, 6);
+            speed = getRandomNum(1, 4);
         };
 
         this.update = function (dt) {
             if (waiting) {
-                if (getRandomNum(0, 60 * 20) === 0) {
+                if (getRandomNum(0, 60 * configs.length) === 0) {
                     waiting = false;
                 }
             } else {
