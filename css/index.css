@@ -34,14 +34,14 @@ img {
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 .page .bio {
+  margin-bottom: 48px;
   font-family: Fusion-Pixel, monospace;
   color: rgba(0, 0, 0, 0.54);
   font-size: 24px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 .page .link-group {
-  margin-top: 60px;
-  margin-bottom: 180px;
+  margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -51,6 +51,9 @@ img {
   font-size: 24px;
   line-height: 40px;
   text-underline-offset: 4px;
+}
+.page .content-space {
+  height: 160px;
 }
 .page .copyright {
   color: rgba(0, 0, 0, 0.54);
