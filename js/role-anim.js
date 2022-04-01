@@ -30,7 +30,7 @@
 
         this.update = function (dt) {
             if (waitting) {
-                if (getRandomNum(0, 60 * 4) === 0) {
+                if (getRandomNum(0, 60 * 3) === 0) {
                     waitting = false;
                 }
             } else {
