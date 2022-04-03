@@ -136,7 +136,7 @@
 
         this.reset = function () {
             x = -config.width * scale;
-            speed = getRandomNum(1, 4);
+            speed = getRandomNum(1, 5);
         };
 
         this.update = function (dt) {
