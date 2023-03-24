@@ -4,7 +4,7 @@
 (function () {
     function updateTheme() {
         if (window.location.hash !== '') {
-            var themeString = window.location.hash.substr(1);
+            var themeString = window.location.hash.substring(1);
             if (themeString === 'theme-light' || themeString === 'theme-dark') {
                 document.body.className = themeString;
             }

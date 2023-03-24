@@ -1,11 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
     font-family: Ark-Pixel-12-zh_cn;
-    src: url("../font/ark-pixel-12px-proportional-zh_cn.woff2");
+    src: url("https://ark-pixel-font.takwolf.com/ark-pixel-12px-proportional-zh_cn.woff2");
 }
 
 $color_background_light: white;
@@ -16,7 +17,7 @@ $color_background_dark: #4b4b4b;
 $color_text_primary_on_dark: white;
 $color_text_secondary_on_dark: rgba(255, 255, 255, 0.7);
 
-$font_ark_pixel_12: Ark-Pixel-12-zh_cn, monospace;
+$font_ark_pixel_12_proportional: Ark-Pixel-12-zh_cn, sans-serif;
 
 $cursor_default: url("../img/cursor-default.png"), default;
 $cursor_pointer: url("../img/cursor-pointer.png") 6 0, pointer;

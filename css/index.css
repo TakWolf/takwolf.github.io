@@ -1,11 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
   font-family: Ark-Pixel-12-zh_cn;
-  src: url("../font/ark-pixel-12px-proportional-zh_cn.woff2");
+  src: url("https://ark-pixel-font.takwolf.com/ark-pixel-12px-proportional-zh_cn.woff2");
 }
 img {
   image-rendering: pixelated;
@@ -22,7 +23,7 @@ a:hover {
 body {
   display: flex;
   flex-direction: column;
-  font-family: Ark-Pixel-12-zh_cn, monospace;
+  font-family: Ark-Pixel-12-zh_cn, sans-serif;
   cursor: url("../img/cursor-default.png"), default;
 }
 
