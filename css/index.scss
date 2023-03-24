@@ -106,7 +106,8 @@ body {
     }
 
     .copyright {
-        font-size: 18px;
+        font-family: common.$font_ark_pixel_10_proportional;
+        font-size: 20px;
         line-height: 24px;
         cursor: common.$cursor_text;
     }
@@ -114,7 +115,7 @@ body {
 
 @media screen and (min-width: 1024px) {
     .page {
-        width: 1024px;
+        width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }

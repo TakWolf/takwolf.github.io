@@ -5,7 +5,11 @@
 }
 
 @font-face {
-  font-family: Ark-Pixel-12-zh_cn;
+  font-family: Ark-Pixel-10-proportional-zh_cn;
+  src: url("https://ark-pixel-font.takwolf.com/ark-pixel-10px-proportional-zh_cn.woff2");
+}
+@font-face {
+  font-family: Ark-Pixel-12-proportional-zh_cn;
   src: url("https://ark-pixel-font.takwolf.com/ark-pixel-12px-proportional-zh_cn.woff2");
 }
 img {
@@ -23,7 +27,7 @@ a:hover {
 body {
   display: flex;
   flex-direction: column;
-  font-family: Ark-Pixel-12-zh_cn, sans-serif;
+  font-family: Ark-Pixel-12-proportional-zh_cn, sans-serif;
   cursor: url("../img/cursor-default.png"), default;
 }
 
@@ -113,14 +117,15 @@ body {
   height: 160px;
 }
 .page .copyright {
-  font-size: 18px;
+  font-family: Ark-Pixel-10-proportional-zh_cn, sans-serif;
+  font-size: 20px;
   line-height: 24px;
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 
 @media screen and (min-width: 1024px) {
   .page {
-    width: 1024px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
