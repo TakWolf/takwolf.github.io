@@ -3,12 +3,12 @@
  */
 (function () {
     function getRandomNum(min, max) {
-        var range = max - min;
-        var rand = Math.random();
+        let range = max - min;
+        let rand = Math.random();
         return(min + Math.round(rand * range));
     }
 
-    var configs = [{
+    let configs = [{
         src: 'img/role-mario-small.gif',
         width: 16,
         height: 16,
@@ -118,10 +118,10 @@
         height: 32,
     }];
 
-    var scale = 2;
+    let scale = 2;
 
     function Role(config) {
-        var img = document.createElement('img');
+        let img = document.createElement('img');
         img.src = config.src;
         img.style.width = config.width * scale + 'px';
         img.style.height = config.height * scale + 'px';
@@ -130,16 +130,16 @@
         img.style.left = -config.width * scale + 'px';
         document.body.appendChild(img);
 
-        var x = -config.width * scale;
-        var speed = 0;
-        var waiting = true;
+        let x = -config.width * scale;
+        let speed = 0;
+        let waiting = true;
 
         this.reset = function () {
             x = -config.width * scale;
             speed = getRandomNum(1, 5);
         };
 
-        this.update = function (dt) {
+        this.update = function (_dt) {
             if (waiting) {
                 if (getRandomNum(0, 60 * configs.length) === 0) {
                     waiting = false;
@@ -155,24 +155,24 @@
         };
     }
 
-    var roles = [];
-    for (var i = 0; i < configs.length; i++) {
-        var role = new Role(configs[i]);
+    let roles = [];
+    for (let i = 0; i < configs.length; i++) {
+        let role = new Role(configs[i]);
         role.reset();
         roles.push(role);
     }
 
     function update(dt) {
-        for (var i = 0; i < roles.length; i++) {
+        for (let i = 0; i < roles.length; i++) {
             roles[i].update(dt);
         }
     }
 
-    var fps = 60;
-    var lastTime = new Date().getTime();
+    let fps = 60;
+    let lastTime = new Date().getTime();
     window.setInterval(function () {
-        var nowTime = new Date().getTime();
-        var deltaTime = nowTime - lastTime;
+        let nowTime = new Date().getTime();
+        let deltaTime = nowTime - lastTime;
         if (deltaTime - 1000 / fps >= 0) {
             lastTime = nowTime;
             update(deltaTime / 1000);

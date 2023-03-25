@@ -1,16 +1,20 @@
-/**
- * 动态主题
- */
-(function () {
-    function updateTheme() {
-        if (window.location.hash !== '') {
-            var themeString = window.location.hash.substring(1);
-            if (themeString === 'theme-light' || themeString === 'theme-dark') {
-                document.body.className = themeString;
-            }
-        }
-    }
 
-    window.addEventListener('hashchange', updateTheme, false);
-    updateTheme();
+function applyTheme(theme) {
+    let className;
+    if (theme === 'dark') {
+        className = 'theme-dark';
+    } else {
+        className = 'theme-light';
+    }
+    document.body.className = className;
+}
+
+function onThemeChange(theme) {
+    localStorage.setItem('config:theme', theme);
+    applyTheme(theme);
+}
+
+(function () {
+    let theme = localStorage.getItem('config:theme');
+    applyTheme(theme);
 })();

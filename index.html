@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +9,10 @@
 
     <!-- 百度统计 -->
     <script>
-        var _hmt = _hmt || [];
         (function () {
-            var hm = document.createElement("script");
+            let hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?a6e0a65c427a43556fc8b8209f343a90";
-            var s = document.getElementsByTagName("script")[0];
+            let s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
@@ -61,12 +60,12 @@
         <a href="https://analytics.google.com" target="_blank">Google Analytics</a>
         <span>和</span>
         <a href="https://tongji.baidu.com" target="_blank">百度统计</a>
-        <img src="img/pixel-qiu.gif">
+        <img src="img/pixel-qiu.gif" alt="qiu">
     </div>
 </div>
 
-<a class="btn-apply-theme theme-light" style="top: 0; left: 0;" href="#theme-light"></a>
-<a class="btn-apply-theme theme-dark" style="top: 0; right: 0;" href="#theme-dark"></a>
+<div class="btn-apply-theme theme-light" style="top: 0; left: 0;" onclick="onThemeChange('light');"></div>
+<div class="btn-apply-theme theme-dark" style="top: 0; right: 0;" onclick="onThemeChange('dark');"></div>
 
 <script src="js/theme.js"></script>
 <script src="js/role-anim.js"></script>
