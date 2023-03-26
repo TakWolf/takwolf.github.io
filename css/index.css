@@ -127,7 +127,7 @@ body {
   cursor: url("../img/cursor-text.png") 11 11, text;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .page {
     width: 1200px;
     margin-left: auto;
