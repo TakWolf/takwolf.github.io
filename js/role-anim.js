@@ -5,7 +5,7 @@
     function getRandomNum(min, max) {
         let range = max - min;
         let rand = Math.random();
-        return(min + Math.round(rand * range));
+        return(rand * range + min);
     }
 
     let configs = [{
@@ -141,7 +141,7 @@
 
         this.update = function (_dt) {
             if (waiting) {
-                if (getRandomNum(0, 60 * configs.length) === 0) {
+                if (getRandomNum(0, 60 * configs.length) <= 1) {
                     waiting = false;
                 }
             } else {

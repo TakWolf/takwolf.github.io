@@ -33,7 +33,7 @@ body {
 
 .theme-light {
   color: rgba(0, 0, 0, 0.87);
-  background-color: aliceblue;
+  background-color: lightyellow;
 }
 .theme-light .color-text-secondary {
   color: rgba(0, 0, 0, 0.54);
