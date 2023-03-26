@@ -33,7 +33,7 @@ body {
 
 .theme-light {
   color: rgba(0, 0, 0, 0.87);
-  background-color: white;
+  background-color: aliceblue;
 }
 .theme-light .color-text-secondary {
   color: rgba(0, 0, 0, 0.54);
@@ -97,6 +97,10 @@ body {
   font-size: 48px;
   line-height: 80px;
   cursor: url("../img/cursor-text.png") 11 11, text;
+}
+.page .title img {
+  width: 72px;
+  height: 40px;
 }
 .page .bio {
   margin-bottom: 48px;

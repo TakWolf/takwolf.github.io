@@ -81,6 +81,10 @@ body {
         font-size: 48px;
         line-height: 80px;
         cursor: common.$cursor_text;
+        img {
+            width: 36px * 2;
+            height: 20px * 2;
+        }
     }
 
     .bio {
