@@ -1,6 +1,4 @@
-# takwolf.com
-
-狼人小林的个人主页
+# 狼人小林的主页
 
 https://takwolf.com
 
