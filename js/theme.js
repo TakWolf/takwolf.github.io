@@ -14,7 +14,4 @@ function onThemeChange(theme) {
     applyTheme(theme)
 }
 
-(function () {
-    let theme = localStorage.getItem('config:theme')
-    applyTheme(theme)
-})()
+applyTheme(localStorage.getItem('config:theme'))
