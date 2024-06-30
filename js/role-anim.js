@@ -3,9 +3,9 @@
  */
 (function () {
     function getRandomNum(min, max) {
-        let range = max - min;
-        let rand = Math.random();
-        return(rand * range + min);
+        let range = max - min
+        let rand = Math.random()
+        return(rand * range + min)
     }
 
     let configs = [{
@@ -116,66 +116,66 @@
         src: 'img/role-kung-fu.gif',
         width: 22,
         height: 32,
-    }];
+    }]
 
-    let scale = 2;
+    let scale = 2
 
     function Role(config) {
-        let img = document.createElement('img');
-        img.src = config.src;
-        img.style.width = config.width * scale + 'px';
-        img.style.height = config.height * scale + 'px';
-        img.style.position = 'fixed';
-        img.style.bottom = '0';
-        img.style.left = -config.width * scale + 'px';
-        document.body.appendChild(img);
+        let img = document.createElement('img')
+        img.src = config.src
+        img.style.width = config.width * scale + 'px'
+        img.style.height = config.height * scale + 'px'
+        img.style.position = 'fixed'
+        img.style.bottom = '0'
+        img.style.left = -config.width * scale + 'px'
+        document.body.appendChild(img)
 
-        let x = -config.width * scale;
-        let speed = 0;
-        let waiting = true;
+        let x = -config.width * scale
+        let speed = 0
+        let waiting = true
 
         this.reset = function () {
-            x = -config.width * scale;
-            speed = getRandomNum(1, 5);
-        };
+            x = -config.width * scale
+            speed = getRandomNum(1, 5)
+        }
 
         this.update = function (_dt) {
             if (waiting) {
                 if (getRandomNum(0, 60 * configs.length) <= 1) {
-                    waiting = false;
+                    waiting = false
                 }
             } else {
-                x += speed;
+                x += speed
                 if (x > window.innerWidth + config.width * scale) {
-                    waiting = true;
-                    this.reset();
+                    waiting = true
+                    this.reset()
                 }
             }
-            img.style.left = (x - config.width * scale / 2) + 'px';
-        };
+            img.style.left = (x - config.width * scale / 2) + 'px'
+        }
     }
 
-    let roles = [];
-    for (let i = 0; i < configs.length; i++) {
-        let role = new Role(configs[i]);
-        role.reset();
-        roles.push(role);
+    let roles = []
+    for (let config of configs) {
+        let role = new Role(config)
+        role.reset()
+        roles.push(role)
     }
 
     function update(dt) {
-        for (let i = 0; i < roles.length; i++) {
-            roles[i].update(dt);
+        for (let role of roles) {
+            role.update(dt)
         }
     }
 
-    let fps = 60;
-    let lastTime = new Date().getTime();
+    let fps = 60
+    let lastTime = new Date().getTime()
     window.setInterval(function () {
-        let nowTime = new Date().getTime();
-        let deltaTime = nowTime - lastTime;
+        let nowTime = new Date().getTime()
+        let deltaTime = nowTime - lastTime
         if (deltaTime - 1000 / fps >= 0) {
-            lastTime = nowTime;
-            update(deltaTime / 1000);
+            lastTime = nowTime
+            update(deltaTime / 1000)
         }
-    }, 1);
-})();
+    }, 1)
+})()

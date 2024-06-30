@@ -1,20 +1,20 @@
 
 function applyTheme(theme) {
-    let className;
+    let className
     if (theme === 'dark') {
-        className = 'theme-dark';
+        className = 'theme-dark'
     } else {
-        className = 'theme-light';
+        className = 'theme-light'
     }
-    document.body.className = className;
+    document.body.className = className
 }
 
 function onThemeChange(theme) {
-    localStorage.setItem('config:theme', theme);
-    applyTheme(theme);
+    localStorage.setItem('config:theme', theme)
+    applyTheme(theme)
 }
 
 (function () {
-    let theme = localStorage.getItem('config:theme');
-    applyTheme(theme);
-})();
+    let theme = localStorage.getItem('config:theme')
+    applyTheme(theme)
+})()
