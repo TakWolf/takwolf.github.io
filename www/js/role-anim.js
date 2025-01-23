@@ -149,12 +149,11 @@ class Role {
         this.image.src = config.src
         this.image.style.position = 'fixed'
         this.image.style.bottom = '0'
-        this.image.style.left = -this.image.width + 'px'
         document.body.appendChild(this.image)
 
-        this.x = -this.image.width
-        this.speed = 0
         this.waiting = true
+        this.reset()
+        this.draw()
     }
 
     reset() {
