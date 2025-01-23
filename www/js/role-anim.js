@@ -148,7 +148,6 @@ class Role {
         this.image = new Image(config.width * scale, config.height * scale)
         this.image.src = config.src
         this.image.style.position = 'fixed'
-        this.image.style.bottom = '0'
         document.body.appendChild(this.image)
 
         this.waiting = true
@@ -177,6 +176,7 @@ class Role {
 
     draw() {
         this.image.style.left = (this.x - this.image.width / 2) + 'px'
+        this.image.style.bottom = '0'
     }
 }
 
