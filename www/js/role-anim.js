@@ -175,7 +175,7 @@ class Role {
     }
 
     draw() {
-        this.image.style.left = (this.x - this.image.width / 2) + 'px'
+        this.image.style.left = `${this.x - this.image.width / 2}px`
         this.image.style.bottom = '0'
     }
 }
