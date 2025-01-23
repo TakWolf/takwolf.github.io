@@ -9,9 +9,9 @@ function applyTheme(theme) {
     document.body.className = className
 }
 
-function onThemeChange(theme) {
+applyTheme(localStorage.getItem('config:theme'))
+
+window.onThemeChange = theme => {
     localStorage.setItem('config:theme', theme)
     applyTheme(theme)
 }
-
-applyTheme(localStorage.getItem('config:theme'))
