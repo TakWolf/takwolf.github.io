@@ -64,57 +64,59 @@ a {
         color: var(--color-text-secondary-on-dark);
     }
 
-    a:link {
-        color: #ffe27b;
-    }
+    a {
+        &:link {
+            color: #ffe27b;
+        }
 
-    a:visited {
-        color: #c4a740;
+        &:visited {
+            color: #c4a740;
+        }
+    }
+}
+
+@keyframes logo-shock {
+    0% {
+        margin-left: 18px;
+    }
+    25% {
+        margin-top: 14px;
+    }
+    30% {
+        margin-right: 12px;
+    }
+    55% {
+        margin-bottom: 10px;
+    }
+    70% {
+        margin-top: 16px;
+        margin-bottom: 10px;
+    }
+    90% {
+        margin-right: 8px;
+        margin-top: 12px;
+    }
+    100% {
+        margin-bottom: 14px;
     }
 }
 
 .page {
     padding: 64px 32px;
 
-    @keyframes logo-shock {
-        0% {
-            margin-left: 18px;
-        }
-        25% {
-            margin-top: 14px;
-        }
-        30% {
-            margin-right: 12px;
-        }
-        55% {
-            margin-bottom: 10px;
-        }
-        70% {
-            margin-top: 16px;
-            margin-bottom: 10px;
-        }
-        90% {
-            margin-right: 8px;
-            margin-top: 12px;
-        }
-        100% {
-            margin-bottom: 14px;
-        }
-    }
-
     .logo {
         /* width: 144px; */
         /* height: 80px; */
         display: block;
-    }
 
-    .logo:hover {
-        animation-delay: 0s;
-        animation-name: logo-shock;
-        animation-duration: .3s;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-timing-function: ease-in-out;
+        &:hover {
+            animation-delay: 0s;
+            animation-name: logo-shock;
+            animation-duration: .3s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-timing-function: ease-in-out;
+        }
     }
 
     .title {
