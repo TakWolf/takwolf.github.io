@@ -27,8 +27,18 @@ const chars = '' +
     '▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧' +
     '▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧' +
     '▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧'
+const fontColors = [
+    '#3aff33',
+    '#404aff',
+    '#ff0000',
+    '#f2ff40',
+    '#ff07d6',
+]
 const fontSize = 24
 const yOffset = 20
+
+let currentFontColor = 0
+let changeFontColorCountdown = 200
 
 const positions = []
 
@@ -53,7 +63,13 @@ function render() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-    ctx.fillStyle = '#3aff33'
+    changeFontColorCountdown -= 1
+    if (changeFontColorCountdown <= 0) {
+        changeFontColorCountdown = Math.floor(Math.random() * 400)
+        currentFontColor = Math.floor(Math.random() * fontColors.length)
+    }
+
+    ctx.fillStyle = fontColors[currentFontColor]
     ctx.font = `${fontSize}px ark-pixel-12-monospaced-zh_cn, monospace`
 
     for (let x = 0; x < positions.length; x++) {
