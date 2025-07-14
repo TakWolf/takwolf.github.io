@@ -33,6 +33,7 @@ const fontColors = [
     '#ff0000',
     '#f2ff40',
     '#ff07d6',
+    '#ffffff',
 ]
 const fontSize = 24
 const yOffset = 20
