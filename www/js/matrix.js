@@ -1,13 +1,6 @@
 const canvas = document.getElementById('matrix')
 const ctx = canvas.getContext('2d')
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-}
-window.addEventListener('resize', resizeCanvas)
-resizeCanvas()
-
 const chars = "" +
     "甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥木火土金水" +
     "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン" +
@@ -15,11 +8,25 @@ const chars = "" +
     "０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ" +
     "▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧"
 const fontSize = 24
-const columns = Math.floor(canvas.width / fontSize)
-const drops = []
+const yOffset = 20
 
-for (let i = 0; i < columns; i++) {
-    drops[i] = Math.random() * -100
+const positions = []
+
+function random_init_y() {
+    return Math.floor(Math.random() * -100) - 1
+}
+
+function resize() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+
+    const columns = Math.floor(canvas.width / fontSize)
+    while (positions.length > columns) {
+        positions.pop()
+    }
+    while (positions.length < columns) {
+        positions.push(random_init_y())
+    }
 }
 
 function render() {
@@ -29,14 +36,23 @@ function render() {
     ctx.fillStyle = '#3aff33'
     ctx.font = `${fontSize}px ark-pixel-12-monospaced-zh_cn, monospace`
 
-    for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length))
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+    for (let x = 0; x < positions.length; x++) {
+        let y = positions[x]
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0
+        if (y >= 0) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length))
+            ctx.fillText(text, x * fontSize, y * fontSize + yOffset)
         }
-        drops[i] += 1
+
+        y += 1
+        if (y * fontSize >= canvas.height) {
+            y = random_init_y()
+        }
+
+        positions[x] = y
     }
 }
-setInterval(render, 20)
+
+window.addEventListener('resize', resize)
+resize()
+setInterval(render, 36)
