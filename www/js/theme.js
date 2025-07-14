@@ -1,12 +1,16 @@
 
 function applyTheme(theme) {
-    let className
+    let bodyClassName
+    let matrixDisplay
     if (theme === 'dark') {
-        className = 'theme-dark'
+        bodyClassName = 'theme-dark'
+        matrixDisplay = 'block'
     } else {
-        className = 'theme-light'
+        bodyClassName = 'theme-light'
+        matrixDisplay = 'none'
     }
-    document.body.className = className
+    document.body.className = bodyClassName
+    document.getElementById('matrix').style.display = matrixDisplay
 }
 
 applyTheme(localStorage.getItem('config:theme'))
