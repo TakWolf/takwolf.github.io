@@ -20,7 +20,7 @@ function resize() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    const columns = Math.floor(canvas.width / fontSize)
+    const columns = Math.ceil(canvas.width / fontSize)
     while (positions.length > columns) {
         positions.pop()
     }
