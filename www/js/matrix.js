@@ -28,11 +28,12 @@ const chars = '' +
     '▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧' +
     '▲△▶▷▼▽◀◁█★☆←↑→↓↖↗↘↙☹☺☻♠♡♢♣♤♥♦♧'
 const fontColors = [
-    '#3aff33',
-    '#404aff',
+    '#00ff00',
+    '#0000ff',
     '#ff0000',
-    '#f2ff40',
-    '#ff07d6',
+    '#ffff00',
+    '#ff00ff',
+    '#00ffff',
     '#ffffff',
 ]
 const fontSize = 24
@@ -43,10 +44,6 @@ let changeFontColorCountdown = 200
 
 const positions = []
 
-function random_init_y() {
-    return Math.floor(Math.random() * -100) - 1
-}
-
 function resize() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
@@ -56,7 +53,7 @@ function resize() {
         positions.pop()
     }
     while (positions.length < columns) {
-        positions.push(random_init_y())
+        positions.push(-1)
     }
 }
 
@@ -66,7 +63,7 @@ function render() {
 
     changeFontColorCountdown -= 1
     if (changeFontColorCountdown <= 0) {
-        changeFontColorCountdown = Math.floor(Math.random() * 400)
+        changeFontColorCountdown = Math.floor(Math.random() * 300) + 50
         currentFontColor = Math.floor(Math.random() * fontColors.length)
     }
 
@@ -83,7 +80,7 @@ function render() {
 
         y += 1
         if (y * fontSize >= canvas.height) {
-            y = random_init_y()
+            y = Math.floor(Math.random() * -100) - 1
         }
 
         positions[x] = y
@@ -93,3 +90,15 @@ function render() {
 window.addEventListener('resize', resize)
 resize()
 setInterval(render, 36)
+
+window.resetMatrix = function () {
+    ctx.fillStyle = '#00000000'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    currentFontColor = 0
+    changeFontColorCountdown = 200
+
+    for (let x = 0; x < positions.length; x++) {
+        positions[x] = -1
+    }
+}

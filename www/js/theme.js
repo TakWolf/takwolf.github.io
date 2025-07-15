@@ -5,6 +5,7 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         bodyClassName = 'theme-dark'
         matrixDisplay = 'block'
+        window.resetMatrix()
     } else {
         bodyClassName = 'theme-light'
         matrixDisplay = 'none'
