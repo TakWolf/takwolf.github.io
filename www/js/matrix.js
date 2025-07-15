@@ -92,7 +92,7 @@ resize()
 setInterval(render, 36)
 
 window.resetMatrix = function () {
-    ctx.fillStyle = '#00000000'
+    ctx.fillStyle = '#ffffff'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     currentFontColor = 0
