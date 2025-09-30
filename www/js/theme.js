@@ -14,7 +14,7 @@ function applyTheme(theme) {
     document.getElementById('matrix').style.display = matrixDisplay
 }
 
-applyTheme(localStorage.getItem('config:theme'))
+applyTheme(localStorage.getItem('config:theme') || 'dark')
 
 window.onThemeChange = theme => {
     localStorage.setItem('config:theme', theme)
