@@ -68,7 +68,7 @@ function render() {
     }
 
     ctx.fillStyle = fontColors[currentFontColor]
-    ctx.font = `${fontSize}px ark-pixel-12-monospaced-zh_cn, monospace`
+    ctx.font = `${fontSize}px ark-pixel-12px-monospaced-zh_hans, monospace`
 
     for (let x = 0; x < positions.length; x++) {
         let y = positions[x]

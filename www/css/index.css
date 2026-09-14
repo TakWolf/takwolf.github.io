@@ -19,24 +19,24 @@
 }
 
 @font-face {
-    font-family: ark-pixel-10-proportional-zh_cn;
+    font-family: ark-pixel-10px-proportional-zh_hans;
     src: url("https://fusion-pixel-font.takwolf.com/fusion-pixel-10px-proportional-zh_hans.otf.woff2");
 }
 
 @font-face {
-    font-family: ark-pixel-12-proportional-zh_cn;
+    font-family: ark-pixel-12px-proportional-zh_hans;
     src: url("https://fusion-pixel-font.takwolf.com/fusion-pixel-12px-proportional-zh_hans.otf.woff2");
 }
 
 @font-face {
-    font-family: ark-pixel-12-monospaced-zh_cn;
+    font-family: ark-pixel-12px-monospaced-zh_hans;
     src: url("https://fusion-pixel-font.takwolf.com/fusion-pixel-12px-monospaced-zh_hans.otf.woff2");
 }
 
 body {
     display: flex;
     flex-direction: column;
-    font-family: ark-pixel-12-proportional-zh_cn, sans-serif;
+    font-family: ark-pixel-12px-proportional-zh_hans, sans-serif;
     cursor: var(--cursor-default);
 }
 
@@ -165,7 +165,7 @@ a {
     }
 
     .copyright {
-        font-family: ark-pixel-10-proportional-zh_cn, sans-serif;
+        font-family: ark-pixel-10px-proportional-zh_hans, sans-serif;
         font-size: 20px;
         line-height: 24px;
         cursor: var(--cursor-text);
